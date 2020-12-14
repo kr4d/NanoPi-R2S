@@ -1,9 +1,13 @@
 name: NanoPi-R2S RK3328 OpenWrt 19.07 Build
 
 on:
-  push:
-    paths:
-      - 'CHANGELOG.md'
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
 
 jobs:
 
